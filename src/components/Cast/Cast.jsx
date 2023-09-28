@@ -3,6 +3,7 @@ import { LiStyle, UlStyle } from "components/MoviesList/MoviesList.styled";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchMovieCast, onFetchError } from "services/api";
+import Error from './error.png';
 
 const endPoint = '/movie';
 
@@ -10,6 +11,7 @@ const Cast = () => {
     const { movieId } = useParams();
     const [loading, setLoading] = useState(true);
     const [cast, setCast] = useState([]);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         if (!movieId) {
@@ -27,6 +29,7 @@ const Cast = () => {
     return <>
         <h3>Cast:</h3>
         {loading && <Loader />}
+        {error && <img src={Error} alt="default pic for error" width="1200" />}
         {cast.length !== 0 ?
             <UlStyle>
                 {cast.map(({ id, name, character, profile_path }) =>

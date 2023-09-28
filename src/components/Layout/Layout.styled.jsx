@@ -23,6 +23,9 @@ export const StyledNavLink = styled(NavLink)`
 
   &.active {
     cursor: pointer;
+    background-color: #770737;
+    color: #fff;
+    border-radius: 4px;
   }
   
   &:hover, &:focus {
