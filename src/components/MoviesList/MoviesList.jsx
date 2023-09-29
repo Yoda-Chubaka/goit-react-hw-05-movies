@@ -11,8 +11,8 @@ const MoviesList = ({ films }) => {
                 <LiStyle key={id}>
                     <img src={poster_path ?
                         `http://image.tmdb.org/t/p/w154${poster_path}` :
-                        'https://www.braasco.com//ASSETS/IMAGES/ITEMS/ZOOM/no_image.jpeg'}
-                        alt={title} width="154" height="231" />
+                        'https://www.csaff.org/wp-content/uploads/csaff-no-poster.jpg'}
+                        alt={title} width="200"/>
                     <WrapCardStyle>
                         <h3>{title}</h3>
                         <p>{overview}</p>

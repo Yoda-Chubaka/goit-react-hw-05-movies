@@ -3,7 +3,6 @@ import { LiStyle, UlStyle } from "components/MoviesList/MoviesList.styled";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchMovieCast, onFetchError } from "services/api";
-import Error from './error.png';
 
 const endPoint = '/movie';
 
@@ -11,7 +10,6 @@ const Cast = () => {
     const { movieId } = useParams();
     const [loading, setLoading] = useState(true);
     const [cast, setCast] = useState([]);
-    const [error, setError] = useState(null);
 
     useEffect(() => {
         if (!movieId) {
@@ -29,7 +27,6 @@ const Cast = () => {
     return <>
         <h3>Cast:</h3>
         {loading && <Loader />}
-        {error && <img src={Error} alt="default pic for error" width="1200" />}
         {cast.length !== 0 ?
             <UlStyle>
                 {cast.map(({ id, name, character, profile_path }) =>
@@ -38,8 +35,10 @@ const Cast = () => {
                         <p>Character: {character}</p>
                         <img src={profile_path ?
                         `http://image.tmdb.org/t/p/w185${profile_path}` :
-                        'https://www.braasco.com//ASSETS/IMAGES/ITEMS/ZOOM/no_image.jpeg'}
+                            "https://static.wikia.nocookie.net/ideas/images/6/66/FoxAndroidTM2%27s_No_Poster.jpg"
+                        }
                         alt={name} width="100" height="150" />
+                        
                     </LiStyle>)}
             </UlStyle> :
             <p>Sorry! We don't have any information about cast</p>
