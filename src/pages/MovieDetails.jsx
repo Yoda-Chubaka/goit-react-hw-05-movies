@@ -40,7 +40,7 @@ const MovieDetails = () => {
                 <img src={poster_path ? `http://image.tmdb.org/t/p/w342${poster_path}` : 'https://www.csaff.org/wp-content/uploads/csaff-no-poster.jpg'} alt={title} width="200" />
                 <CardStyle>
                     <h3>{original_title}</h3>
-                    <p><b>Release date:</b> {release_date ? { release_date } : "No information"}</p>
+                    <p><b>Release date:</b> { release_date }</p>
                     <p><b>Genres</b>{genres.map(genre => (
                     <span key={genre.id}> {genre.name}</span>
                     ))}
