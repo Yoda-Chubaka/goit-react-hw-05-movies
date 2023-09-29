@@ -45,8 +45,8 @@ const MovieDetails = () => {
                     <span key={genre.id}> {genre.name}</span>
                     ))}
                     </p>
-                    <p><b>Ranking:</b> {vote_average}</p>
-                    <p><b>Overview:</b> {overview}</p>
+                    <p><b>Ranking:</b> {vote_average ? { vote_average } : "No information"}</p>
+                    <p><b>Overview:</b> {overview ? { overview } : "No information"}</p>
                 </CardStyle>
             </WrapStyle>
             <h3>Additional information:</h3>
