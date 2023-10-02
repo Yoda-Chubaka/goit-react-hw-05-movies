@@ -41,10 +41,9 @@ const MovieDetails = () => {
                 <CardStyle>
                     <h3>{original_title}</h3>
                     <p><b>Release date:</b> {release_date ? release_date : "No information"}</p>
-                    <p><b>Genres</b>{genres.map(genre => (
+                    <p><b>Genres:</b>{genres ? genres.map(genre => (
                     <span key={genre.id}> {genre.name}</span>
-                    ))}
-                    </p>
+                    )) : "No information"}</p>
                     <p><b>Ranking:</b> {vote_average ? vote_average : "No information"}</p>
                     <p><b>Overview:</b> {overview ? overview : "No information"}</p>
                 </CardStyle>
